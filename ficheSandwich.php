@@ -1,20 +1,15 @@
 <?php
 require_once "dataBase/sandwichDataBase.php";
+require_once "logique/logique.php";
 
 
 foreach ($sandwichs as $sandwich){
 
     if($sandwich['id'] == $_GET['idSandwich']){
 
+        $sandwichSelect=$sandwich;
 
-        ob_start();
-        $productSelect = $sandwich;
-//        var_dump($productSelect);
-
-        require_once "template/productDetail.php";
-        $content = ob_get_clean();
-
-        require_once "template/base.html.php";
+        afficher("sandwich/unSandwich",["sandwich"=>$sandwichSelect]);
 
 
     }

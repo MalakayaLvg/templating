@@ -1,23 +1,20 @@
 <?php
 require_once "dataBase/pizzaDataBase.php";
+require_once "logique/logique.php";
 
 
 foreach ($pizzas as $pizza){
 
     if($pizza['id'] == $_GET['idPizza']){
 
+        $pizzaSelect=$pizza;
 
-        ob_start();
-        $productSelect = $pizza;
-//        var_dump($pizzaSelect);
-
-        require_once "template/productDetail.php";
-        $content = ob_get_clean();
-
-        require_once "template/base.html.php";
+        afficher("pizza/unePizza",["pizza"=>$pizzaSelect]);
 
 
     }
 }
+
+
 
 

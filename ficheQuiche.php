@@ -1,20 +1,15 @@
 <?php
 require_once "dataBase/quicheDataBase.php";
+require_once "logique/logique.php";
 
 
 foreach ($quiches as $quiche){
 
     if($quiche['id'] == $_GET['idQuiche']){
 
+        $quicheSelect=$quiche;
 
-        ob_start();
-        $productSelect = $quiche;
-//        var_dump($productSelect);
-
-        require_once "template/productDetail.php";
-        $content = ob_get_clean();
-
-        require_once "template/base.html.php";
+        afficher("quiche/uneQuiche",["quiche"=>$quicheSelect]);
 
 
     }
