@@ -1,8 +1,16 @@
-<?php require_once "logique/logique.php";
+<?php
+require_once "logique/logique.php";
+$id = $_GET['id'];
 
-$query = $pdo->query("SELECT * FROM sushis");
-$sushis = $query->fetchAll();
+$query = $pdo->prepare("SELECT * FROM sushis WHERE id = :id");
 
-afficher("sushi/index",["sushis"=>$sushis]);
+    $query->execute([
+            "id" => $id
+        ]);
+
+    $sushi = $query->fetch();
+
+    afficher('sushi/show',["sushi"=>$sushi,"pageTitle"=>$sushi['fish']]);
+
 
 

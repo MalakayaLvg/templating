@@ -28,7 +28,7 @@
                     <a class="nav-link active" aria-current="page" href="quiche.php">Quiches</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="sushi.php">Sushis</a>
+                    <a class="nav-link active" aria-current="page" href="tousLesSushis.php">Sushis</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
